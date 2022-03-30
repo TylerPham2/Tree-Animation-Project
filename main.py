@@ -9,9 +9,9 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
 
 # constants
-WIDTH = 250
-HEIGHT = 275
-FPS = 5
+WIDTH = 1440
+HEIGHT = 900
+FPS = 6
 
 # RGB colors
 white = (255, 255, 255)
@@ -32,7 +32,7 @@ pygame.image.load('./assets/rodriguez_3.png')
 
 # changes size of all images to fit screen
 for i in range(len(my_images)):
-  my_images[i] = pygame.transform.scale(my_images[i], (250, 200))
+  my_images[i] = pygame.transform.scale(my_images[i], (350, 250))
 
 # set Window
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -40,22 +40,23 @@ pygame.display.set_caption("Tree Animation")
 WINDOW.fill(white)
 
 # set up your font
-font = pygame.font.Font('./fonts/Lobster-Regular.ttf', 10)
+font = pygame.font.Font('./fonts/Lobster-Regular.ttf', 14)
 
 # create your text
-text = font.render('Tree Animation', True, black, white)
+text = font.render('Tree Animaqrweuhjhlrhqlrhqwkjhrqrhqkjrhkjrhqrhqwkjrhqrkhkjqwhrkjqhrkqwjrhqrhqkrjqkhrhqrjhqekr', True, black, white)
 textRect = text.get_rect()
 
-credits = font.render('Programming by Tyler and Connor Art by Rodriguez', True, black, white)
+credits = font.render('Tree Animation, Programming by Tyler Pham and Connor James, Art by Jay Rodiguez', True, black, white)
 creditsRect = credits.get_rect()
 
 # position the text
-textRect.center = (WIDTH // 2, HEIGHT // 7)
+textRect.center = (WIDTH // 4, HEIGHT // 5)
 
-###credtsRect.center = Width
+creditsRect.center = (WIDTH // 5.2, HEIGHT // 22)
 
 # display text
-WINDOW.blit(text, textRect)
+WINDOW.blit(credits, creditsRect)
+
 pygame.display.flip()
 
 # draw shape function
@@ -64,7 +65,7 @@ def drawShape():
   global image_count
   if (image_count == 3):
     image_count = 0
-  WINDOW.blit(my_images[image_count], (0, 100))
+  WINDOW.blit(my_images[image_count], (90, 50))
   pygame.display.flip()
   image_count += 1
   

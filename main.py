@@ -32,7 +32,7 @@ pygame.image.load('./assets/rodriguez_3.png')
 
 # changes size of all images to fit screen
 for i in range(len(my_images)):
-  my_images[i] = pygame.transform.scale(my_images[i], (350, 250))
+  my_images[i] = pygame.transform.scale(my_images[i], (500, 500))
 
 # set Window
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -40,7 +40,7 @@ pygame.display.set_caption("Tree Animation")
 WINDOW.fill(white)
 
 # set up your font
-font = pygame.font.Font('./fonts/Lobster-Regular.ttf', 14)
+font = pygame.font.Font('./fonts/Lobster-Regular.ttf', 40)
 
 # create your text
 text = font.render('Tree Animaqrweuhjhlrhqlrhqwkjhrqrhqkjrhkjrhqrhqwkjrhqrkhkjqwhrkjqhrkqwjrhqrhqkrjqkhrhqrjhqekr', True, black, white)
@@ -52,7 +52,7 @@ creditsRect = credits.get_rect()
 # position the text
 textRect.center = (WIDTH // 4, HEIGHT // 5)
 
-creditsRect.center = (WIDTH // 5.2, HEIGHT // 22)
+creditsRect.center = (WIDTH // 2, HEIGHT // 12)
 
 # display text
 WINDOW.blit(credits, creditsRect)
@@ -65,7 +65,7 @@ def drawShape():
   global image_count
   if (image_count == 3):
     image_count = 0
-  WINDOW.blit(my_images[image_count], (90, 50))
+  WINDOW.blit(my_images[image_count], (470, 270))
   pygame.display.flip()
   image_count += 1
   
